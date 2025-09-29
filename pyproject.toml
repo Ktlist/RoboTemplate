@@ -23,3 +23,8 @@ robotframework-libtoc = "*"
 [build-system]
 requires = ["poetry-core>=2.2.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.robocop.lint]
+configure = [
+    "line-too-long.line_length=140"
+]

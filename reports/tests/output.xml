@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-09-24T23:18:29.553698" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="C:\Users\andre\_proyectos\RoboTemplate\tests">
+<kw name="Framework Initialization" type="SETUP">
+<kw name="Initialize Environment" owner="environment">
+<msg time="2025-09-24T23:18:29.590710" level="INFO">${ENVIRONMENT} = {'status': 'Environment initialized', 'data': {'bench': {'name': 'example_bench', 'type': 'physical', 'devices': [{'name': 'pc1', 'type': 'computer', 'host': '192.168.1.11', 'username': 'user', 'passw...</msg>
+<var>${ENVIRONMENT}</var>
+<arg>${input_data}</arg>
+<doc>Keyword to initialize the test environment.</doc>
+<status status="PASS" start="2025-09-24T23:18:29.590484" elapsed="0.000264"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-09-24T23:18:29.591068" level="INFO">${ENVIRONMENT} = {'status': 'Environment initialized', 'data': {'bench': {'name': 'example_bench', 'type': 'physical', 'devices': [{'name': 'pc1', 'type': 'computer', 'host': '192.168.1.11', 'username': 'user', 'passw...</msg>
+<arg>${ENVIRONMENT}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-09-24T23:18:29.590857" elapsed="0.000254"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-24T23:18:29.591331" level="INFO">Framework Initialization: {'status': 'Environment initialized', 'data': {'bench': {'name': 'example_bench', 'type': 'physical', 'devices': [{'name': 'pc1', 'type': 'computer', 'host': '192.168.1.11', 'username': 'user', 'password': 'pass', 'os': 'linux'}, {'name': 'pc2', 'type': 'computer', 'host': '192.168.1.12', 'username': 'user', 'password': 'pass', 'os': 'windows'}, {'name': 'dut1', 'type': 'dut', 'model': 'DUT-Model-X', 'parent': 'pc1', 'role': 'primary', 'connections': [{'type': 'ssh', 'host': '192.168.2.13', 'username': 'admin', 'password': 'adminpass'}, {'type': 'serial', 'port': 'COM3', 'baudrate': 115200}, {'type': 'telnet', 'host': '192.168.2.13', 'username': 'admin', 'password': 'adminpass', 'port': 23}]}, {'name': 'dut2', 'type': 'dut', 'model': 'DUT-Model-Y', 'parent': 'pc2', 'role': 'secondary', 'connections': [{'type': 'ssh', 'host': '192.168.2.14', 'username': 'admin', 'password': 'adminpass'}, {'type': 'serial', 'port': 'COM4', 'baudrate': 115200}, {'type': 'telnet', 'host': '192.168.2.14', 'username': 'admin', 'password': 'adminpass', 'port': 23}]}], 'connections': [{'type': 'propietary', 'nodes': 'dut2,dut1'}]}, 'settings': {'log_level': 'INFO', 'retry_failed_tests': 2, 'report_format': 'html', 'output_directory': 'output', 'timeout': '30s'}}}</msg>
+<arg>Framework Initialization: ${ENVIRONMENT}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-24T23:18:29.591192" elapsed="0.000182"/>
+</kw>
+<doc>this keyword will be executed once before starting all tests,
+place here any initialization common to all tests
+in this case we are using it to define a global variable,
+"ENVIRONMENT" holds all the environment data that the test will need to run</doc>
+<status status="PASS" start="2025-09-24T23:18:29.590114" elapsed="0.001311"/>
+</kw>
+<suite id="s1-s1" name="Example Test" source="C:\Users\andre\_proyectos\RoboTemplate\tests\example_test.robot">
+<test id="s1-s1-t1" name="Example Test Case 1" line="8">
+<kw name="Some Keyword">
+<msg time="2025-09-24T23:18:29.596313" level="FAIL">Variable '${variable_from_resource}' not found.</msg>
+<arg>${variable_from_resource}</arg>
+<doc>This is an example keyword that demonstrates usage of a variable from the resource file.</doc>
+<status status="FAIL" start="2025-09-24T23:18:29.595905" elapsed="0.000449">Variable '${variable_from_resource}' not found.</status>
+</kw>
+<doc>This is an example test case that demonstrates usage of keywords.</doc>
+<status status="FAIL" start="2025-09-24T23:18:29.595503" elapsed="0.000980">Variable '${variable_from_resource}' not found.</status>
+</test>
+<test id="s1-s1-t2" name="Example Test Case 2" line="12">
+<kw name="Another Keyword">
+<msg time="2025-09-24T23:18:29.597274" level="FAIL">Variable '${another_variable}' not found.</msg>
+<arg>${another_variable}</arg>
+<arg>argument1</arg>
+<arg>argument2</arg>
+<doc>This is another example keyword that takes multiple arguments.</doc>
+<status status="FAIL" start="2025-09-24T23:18:29.596920" elapsed="0.000386">Variable '${another_variable}' not found.</status>
+</kw>
+<doc>This is another example test case.</doc>
+<status status="FAIL" start="2025-09-24T23:18:29.596655" elapsed="0.000765">Variable '${another_variable}' not found.</status>
+</test>
+<doc>Example test suite for Robot Framework</doc>
+<status status="FAIL" start="2025-09-24T23:18:29.591472" elapsed="0.006239"/>
+</suite>
+<kw name="Framework Teardown" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-24T23:18:29.598452" level="INFO">Framework Teardown: {'status': 'Environment initialized', 'data': {'bench': {'name': 'example_bench', 'type': 'physical', 'devices': [{'name': 'pc1', 'type': 'computer', 'host': '192.168.1.11', 'username': 'user', 'password': 'pass', 'os': 'linux'}, {'name': 'pc2', 'type': 'computer', 'host': '192.168.1.12', 'username': 'user', 'password': 'pass', 'os': 'windows'}, {'name': 'dut1', 'type': 'dut', 'model': 'DUT-Model-X', 'parent': 'pc1', 'role': 'primary', 'connections': [{'type': 'ssh', 'host': '192.168.2.13', 'username': 'admin', 'password': 'adminpass'}, {'type': 'serial', 'port': 'COM3', 'baudrate': 115200}, {'type': 'telnet', 'host': '192.168.2.13', 'username': 'admin', 'password': 'adminpass', 'port': 23}]}, {'name': 'dut2', 'type': 'dut', 'model': 'DUT-Model-Y', 'parent': 'pc2', 'role': 'secondary', 'connections': [{'type': 'ssh', 'host': '192.168.2.14', 'username': 'admin', 'password': 'adminpass'}, {'type': 'serial', 'port': 'COM4', 'baudrate': 115200}, {'type': 'telnet', 'host': '192.168.2.14', 'username': 'admin', 'password': 'adminpass', 'port': 23}]}], 'connections': [{'type': 'propietary', 'nodes': 'dut2,dut1'}]}, 'settings': {'log_level': 'INFO', 'retry_failed_tests': 2, 'report_format': 'html', 'output_directory': 'output', 'timeout': '30s'}}}</msg>
+<arg>Framework Teardown: ${ENVIRONMENT}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-24T23:18:29.598308" elapsed="0.000191"/>
+</kw>
+<doc>this keyword will be executed once after finishing all tests,
+place here any cleanup common to all tests
+Because this keywords position the actions here will ALWAYS be executed,
+take this chance to cleanup anything that in the worst case scenario could freeze up ypur test bench</doc>
+<status status="PASS" start="2025-09-24T23:18:29.598163" elapsed="0.000385"/>
+</kw>
+<doc>this file  setup and teardown will be always executed before and after the set of tests,
+make sure to place here any initialization and cleanup common to any test to be executed</doc>
+<status status="FAIL" start="2025-09-24T23:18:29.559598" elapsed="0.038976"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Tests" id="s1" pass="0" fail="2" skip="0">Tests</stat>
+<stat name="Example Test" id="s1-s1" pass="0" fail="2" skip="0">Tests.Example Test</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-09-24T23:18:29.595120" level="ERROR">Error in file 'C:\Users\andre\_proyectos\RoboTemplate\tests\example_test.robot' on line 4: Resource file '..\resources\example_resource.resource' does not exist.</msg>
+</errors>
+</robot>

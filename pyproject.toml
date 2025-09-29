@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "robot-project"
+version = "0.1.0"
+description = "A Robot Framework project for automated testing."
+authors = ["Your Name <youremail@example.com>"]
+license = "MIT"
+
+
+[tool.poetry.dependencies]
+python = ">=3.9,<4.0"
+robotframework = "*"
+robotframework-requests = "*"
+pyyaml = "*"
+
+[tool.poetry.dev-dependencies]
+robotframework-testdoc = "*"
+robotframework-robocop = "*"
+invoke = "*"
+docutils = "^0.22"
+robotframework-libtoc = "*"
+
+[build-system]
+requires = ["poetry-core>=2.2.0"]
+build-backend = "poetry.core.masonry.api"

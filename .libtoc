@@ -1,0 +1,16 @@
+[paths]
+# Use glob patterns
+libraries/**/*.robot
+librariess/**/*.resource
+libraries/**/*.py
+resources/**/*.robot
+resources/**/*.resource
+resources/**/*.py
+
+tests/**/*.resource
+tests/**/*.py
+
+
+[libs]
+
+[packages]

@@ -1,0 +1,15 @@
+on:
+  pull_request:
+    branches:
+    - main
+  workflow_dispatch:
+jobs:
+  lint:
+    name: run Robocop
+    runs-on: windows-latest
+    steps:
+    - name: lint
+      run: |
+        poetry install
+        inv lint
+  

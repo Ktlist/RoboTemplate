@@ -5,7 +5,7 @@ Documentation    In this file will be defined the test that can be executed.
 ...    if 2 tests hava a too different behaviour maybe they are meant to be in different test suites.
 ...
 ...    the template itself will be defined in the example_suite_test.resource file, in this same folder.
-...    Of course the template can also be defined in this same file but just to keep things organized and clean, 
+...    Of course the template can also be defined in this same file but just to keep things organized and clean,
 ...    the tests combinations and the steps definition will be separated by default
 
 Resource    ./example_suite_test_2.resource
@@ -16,11 +16,12 @@ Example Test Case A
     [Documentation]    This is an example test case A that uses the template defined in the resource file.
     ...    It demonstrates how to pass different arguments to the same template.
     [Tags]    test_manager_id_201
-    [Template]    Example Test 2 Template
+    [Template]    Example Second Test Template
     argument1    argument2
 
 Example Test Case B
-    [Documentation]    This is an example test case B that uses the same template as Test Case A but different arguments.
+    [Documentation]    This is an example test case B
+    ...    uses the same template as Test Case A but different arguments.
     [Tags]    test_manager_id_202
-    [Template]    Example Test 2 Template
+    [Template]    Example Second Test Template
     argument2    argument1

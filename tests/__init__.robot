@@ -5,6 +5,11 @@ Suite Setup      Framework Initialization
 Suite Teardown    Framework Teardown
 Library    ../libraries/framework/environment.py
 
+
+*** Variables ***
+${ENVIRONMENT}    None
+
+
 *** Keywords ***
 Framework Initialization
     [Documentation]    this keyword will be executed once before starting all tests,
@@ -12,7 +17,7 @@ Framework Initialization
     ...    in this case we are using it to define a global variable,
     ...    "ENVIRONMENT" holds all the environment data that the test will need to run
     ${ENVIRONMENT}=    Initialize Environment    ${input_data}
-    Set Global Variable   ${ENVIRONMENT}
+    VAR    ${ENVIRONMENT}    value    scope=GLOBAL  # noqa
     Log    Framework Initialization: ${ENVIRONMENT}
 
 Framework Teardown

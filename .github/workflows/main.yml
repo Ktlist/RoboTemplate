@@ -5,11 +5,37 @@ on:
   workflow_dispatch:
 jobs:
   lint:
-    name: run Robocop
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
-    - name: lint
-      run: |
-        poetry install
-        inv lint
+      #----------------------------------------------
+      #       check-out repo and set-up python
+      #----------------------------------------------
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up python
+        id: setup-python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      #----------------------------------------------
+      #  -----  install & configure poetry  -----
+      #----------------------------------------------
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+        with:
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+          virtualenvs-path: .venv
+          installer-parallel: true
+
+      #----------------------------------------------
+      # install dependencies if cache does not exist
+      #----------------------------------------------
+      - name: Install dependencies
+        run: poetry install --no-interaction --no-root
+      #----------------------------------------------
+      # run lint task
+      #----------------------------------------------
+      - name: lint
+        run: inv lint
   
